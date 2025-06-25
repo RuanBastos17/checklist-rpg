@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checklist RPG: HTML + CSS + JS - Completo</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+      background-size: 400% 400%;
+      animation: bgAnim 20s ease infinite;
+    }
+    @keyframes bgAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00ffcc;
+    }
+    .hidden {
+      display: none;
+    }
+    .phase {
+      background: #292929cc;
+      border: 2px solid #444;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 0.7rem;
+    }
+    #xpDisplay {
+      background: #111;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #0f0;
+      margin-bottom: 2rem;
+    }
+    #loginForm {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    #loginForm input {
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+    #loginForm button, #finishBtn {
+      padding: 0.5rem 1rem;
+      background: #00ff88;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #congratsMessage {
+      background: #006622cc;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #bfff00;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="loginSection">
+    <h1>🔐 RPG Checklist Login</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Nome de usuário" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div id="gameSection" class="hidden">
+    <h1>📘 Jornada RPG: Estudo HTML + CSS + JS</h1>
+    <div id="xpDisplay">XP Atual: 0</div>
+
+    <!-- Fase 1 -->
+    <div class="phase">
+      <h2>📗 Fase 1 – Fundamentos Básicos (2-3 semanas)</h2>
+      <label><input type="checkbox" data-xp="5" /> HTML: Estrutura básica do HTML (doctype, html, head, body)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML: Principais tags semânticas (h1-h6, p, div, span, header, footer, main, section, article)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML: Listas (ul, ol, li)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML: Imagens e links (img, a)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML: Tabelas básicas (table, tr, td, th)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML: Formulários simples (form, input, label, textarea, button)</label>
+
+      <label><input type="checkbox" data-xp="5" /> CSS: Sintaxe e inclusão de CSS (inline, internal, external)</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Seletores básicos (tag, class, id)</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Propriedades de texto (color, font-family, font-size, text-align)</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Box model (margin, border, padding, width, height)</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Backgrounds e cores</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Display: block, inline, inline-block</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Position: static, relative, absolute</label>
+
+      <label><input type="checkbox" data-xp="5" /> JS: Introdução ao JS e ambiente (console, alert, script tag)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Variáveis (var, let, const)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Tipos de dados (string, number, boolean, null, undefined)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Operadores aritméticos e lógicos</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Estruturas condicionais (if, else, switch)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Loops (for, while)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Funções básicas</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Manipulação simples de arrays</label>
+
+      <label><input type="checkbox" data-xp="15" /> Projeto: Página pessoal simples com HTML e CSS</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Formulário básico com validação via JS</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Pequeno quiz com perguntas e respostas em JS</label>
+    </div>
+
+    <!-- Fase 2 -->
+    <div class="phase">
+      <h2>🎨 Fase 2 – Layout e Interatividade (3-4 semanas)</h2>
+      <label><input type="checkbox" data-xp="5" /> HTML: Tags semânticas avançadas (nav, aside, figure, figcaption)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML: Formulários avançados (select, radio, checkbox, validation attributes)</label>
+
+      <label><input type="checkbox" data-xp="5" /> CSS: Flexbox: conceitos e aplicação</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Grid layout básico</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Media queries para responsividade</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Pseudo-classes e pseudo-elementos (:hover, :focus, ::before, ::after)</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Transições e animações simples</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Variáveis CSS (custom properties)</label>
+      <label><input type="checkbox" data-xp="5" /> CSS: Organização CSS (BEM metodologia)</label>
+
+      <label><input type="checkbox" data-xp="5" /> JS: DOM (Document Object Model): seleção e manipulação de elementos</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Eventos (click, input, submit, keypress)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Funções avançadas e callbacks</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Arrays e objetos avançados</label>
+      <label><input type="checkbox" data-xp="5" /> JS: LocalStorage para persistência de dados</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Manipulação de formulários via JS</label>
+
+      <label><input type="checkbox" data-xp="15" /> Projeto: To-do list interativa e persistente</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Menu hamburguer responsivo</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Formulário com validação avançada e mensagens customizadas</label>
+    </div>
+
+    <!-- Fase 3 -->
+    <div class="phase">
+      <h2>💻 Fase 3 – JavaScript Avançado e APIs (4-6 semanas)</h2>
+      <label><input type="checkbox" data-xp="5" /> JS: Funções anônimas e arrow functions</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Métodos de arrays (map, filter, reduce)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Promises e async/await</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Fetch API para requisições HTTP</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Modularização com ES6 modules (import/export)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Manipulação avançada do DOM</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Eventos avançados e delegação</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Debugging e ferramentas de desenvolvimento</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Classes e Programação Orientada a Objetos (OOP) básica</label>
+
+      <label><input type="checkbox" data-xp="15" /> Projeto: Aplicação de clima usando API externa</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Busca de filmes com API (ex: OMDB)</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Quiz interativo com placar e persistência local</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: SPA simples usando vanilla JS</label>
+    </div>
+
+    <!-- Fase 4 -->
+    <div class="phase">
+      <h2>🚀 Fase 4 – Projeto Final e Masterização (4-6 semanas)</h2>
+      <label><input type="checkbox" data-xp="5" /> HTML e CSS: Pré-processadores CSS (SASS/SCSS)</label>
+      <label><input type="checkbox" data-xp="5" /> HTML e CSS: Animações complexas e keyframes</label>
+      <label><input type="checkbox" data-xp="5" /> HTML e CSS: Técnicas avançadas de responsividade e design adaptativo</label>
+      <label><input type="checkbox" data-xp="5" /> HTML e CSS: Otimização e acessibilidade web (ARIA roles, contrastes, teclado)</label>
+
+      <label><input type="checkbox" data-xp="5" /> JS: Design Patterns básicos (Singleton, Observer)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Testes unitários (ex: Jest básico)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Performance e otimização</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Uso de ferramentas de build (Webpack, Babel)</label>
+      <label><input type="checkbox" data-xp="5" /> JS: Controle de versão com Git e GitHub (fluxos de trabalho)</label>
+
+      <label><input type="checkbox" data-xp="15" /> Projeto: Dashboard com gráficos dinâmicos</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: Mini e-commerce com carrinho e filtros</label>
+      <label><input type="checkbox" data-xp="15" /> Projeto: SPA clone da Netflix, Spotify, ou outro app popular</label>
+    </div>
+
+    <button id="finishBtn">🎉 Finalizar Jornada</button>
+
+    <div id="congratsMessage">
+      🎉 Parabéns, Herói do Código! Você concluiu toda a jornada de estudos em HTML, CSS e JavaScript!
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginSection = document.getElementById('loginSection');
+    const gameSection = document.getElementById('gameSection');
+    const xpDisplay = document.getElementById('xpDisplay');
+    const finishBtn = document.getElementById('finishBtn');
+    const congratsMessage = document.getElementById('congratsMessage');
+
+    let checkboxes;
+    let totalXP = 0;
+    let user = null;
+
+    function loadProgress() {
+      const saved = localStorage.getItem(`rpgChecklist_${user}`);
+      if (saved) {
+        const data = JSON.parse(saved);
+        totalXP = data.totalXP || 0;
+        xpDisplay.textContent = `XP Atual: ${totalXP}`;
+        checkboxes.forEach((box, index) => {
+          box.checked = data.checked[index];
+        });
+      }
+    }
+
+    function saveProgress() {
+      const checked = Array.from(checkboxes).map(box => box.checked);
+      const data = {
+        totalXP,
+        checked
+      };
+      localStorage.setItem(`rpgChecklist_${user}`, JSON.stringify(data));
+    }
+
+    function initChecklist() {
+      checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          const xp = parseInt(checkbox.dataset.xp);
+          if (checkbox.checked) totalXP += xp;
+          else totalXP -= xp;
+          xpDisplay.textContent = `XP Atual: ${totalXP}`;
+          saveProgress();
+        });
+      });
+      loadProgress();
+    }
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      user = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+      const existing = localStorage.getItem(`user_${user}`);
+
+      if (!existing) {
+        localStorage.setItem(`user_${user}`, password);
+        loginSection.classList.add('hidden');
+        gameSection.classList.remove('hidden');
+        initChecklist();
+      } else if (existing === password) {
+        loginSection.classList.add('hidden');
+        gameSection.classList.remove('hidden');
+        initChecklist();
+      } else {
+        alert('Senha incorreta!');
+      }
+    });
+
+    finishBtn.addEventListener('click', () => {
+      const allChecked = Array.from(document.querySelectorAll('input[type="checkbox"]')).every(cb => cb.checked);
+      if (allChecked) {
+        congratsMessage.style.display = 'block';
+        finishBtn.style.display = 'none';
+      } else {
+        alert('Complete todos os itens antes de finalizar!');
+      }
+    });
+  </script>
+</body>
+</html>
